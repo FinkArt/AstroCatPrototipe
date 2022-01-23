@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 10}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 1113, y: 342}
   m_MaxSize: {x: 26008, y: 10021}
   vertical: 0
-  controlID: 108
+  controlID: 184
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_MinSize: {x: 606, y: 342}
   m_MaxSize: {x: 12006, y: 8042}
   vertical: 1
-  controlID: 168
+  controlID: 185
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_MinSize: {x: 606, y: 221}
   m_MaxSize: {x: 12006, y: 4021}
   vertical: 0
-  controlID: 169
+  controlID: 186
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -209734
+  m_LastSelectedObjectID: -1862
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -460,22 +460,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Localization
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Localization
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\fink7\AstroCatPrototipe
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 466d0000
-    m_LastClickedID: 27974
-    m_ExpandedIDs: 00000000aa430000b4430000b8430000ba430000bc430000
+    m_SelectedIDs: e2430000
+    m_LastClickedID: 17378
+    m_ExpandedIDs: 00000000c2430000c4430000c6430000c8430000ca430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa430000
+    m_ExpandedIDs: 00000000c2430000c4430000c6430000c8430000ca430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -534,15 +534,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000fc5400008c56000074730000445e000000000000ca99000078a70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LanguageChanger
-      m_OriginalName: LanguageChanger
+      m_Name: Localization
+      m_OriginalName: Localization
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 27978
+      m_UserData: 17394
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -624,9 +624,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4a6d0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 30bdffffc2ceffff68cfffffe2cfffff00ddffff40fbffffb05c0000d05c0000da5c00000a5d000078620000b26200001e6800002a680000586800005c68000094680000
+      m_SelectedIDs: baf8ffff
+      m_LastClickedID: -1862
+      m_ExpandedIDs: 72f9ffff3afbffffc044000002450000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
