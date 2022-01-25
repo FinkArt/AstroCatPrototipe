@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starsSpeed: 0.035
   starsDirection: {x: 0, y: -1}
-  placeOfStarsSpawn: {fileID: 0}
+  placeOfStarsSpawn: {fileID: 3350314540064470985, guid: 5276831ad94949946b19d9ddc51c1982, type: 3}
 --- !u!61 &5549636777543162444
 BoxCollider2D:
   m_ObjectHideFlags: 0

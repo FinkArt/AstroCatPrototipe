@@ -6,6 +6,15 @@ public class MoveEnemies : Entity
 {
     //speed и direction - данные переменные привязаны к родительскому классу Entity 
 
+    private void Start()
+    {
+        if (transform.position.y >= 15)
+        {
+            speed = 0.5f;
+        }
+
+    }
+
     private void Update()
     {
         transform.Rotate(0, 0, 150 * Time.deltaTime); //задаем кручение для объекта

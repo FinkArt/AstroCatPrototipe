@@ -59,7 +59,6 @@
     <Compile Include="Assets\Scripts\Game Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\Buttons.cs" />
     <Compile Include="Assets\Scripts\Game Scripts\MoveEnemies.cs" />
-    <Compile Include="Assets\Scripts\Localization\LanguageChanger.cs" />
     <Compile Include="Assets\Scripts\Game Scripts\Sputnik.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\AsteroidMenu.cs" />
     <Compile Include="Assets\Scripts\Game Scripts\MoveStarsBackgound.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\SpawnerAsteroid.cs" />
     <Compile Include="Assets\Scripts\Game Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Localization\Localization.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

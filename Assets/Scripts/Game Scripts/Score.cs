@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    private int score = 10;
+    public static int score = 10;
     [SerializeField] public GameObject scorePanel;
     public static int scoreFish = 0;
     [SerializeField] public GameObject scoreFishPanel;
