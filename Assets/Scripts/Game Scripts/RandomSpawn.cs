@@ -5,9 +5,10 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {
     public GameObject[] prefabs; //массив с префабами, которые должны рандомно появляться
-    public float timeStep = 1f; //переменная для временного диапазона появления объектов
+    public float timeStep; //переменная для временного диапазона появления объектов
     Vector2 whereToSpawn; //переменная для того, чтобы показать место где будет появляться наши объекты
-    public float [] respawns; //позиции для появления астероидов и сушинок(fish)
+    private float [] respawns = new float [] {-4.8f, -1.4f, 1.4f, 4.8f }; //позиции для появления астероидов и сушинок(fish)
+    
 
 
     //[SerializeField] private GameObject spawner;
@@ -28,32 +29,49 @@ public class RandomSpawn : MonoBehaviour
     //    float randX = Random.Range(0, respawns.Length); //рандомный перебор значений по оси Х
     //    int randPrefabs = Random.Range(0, prefabs.Length); //рандомный перебор в массиве с префабами астероидов
     //    whereToSpawn = new Vector2(randX, transform.position.y); //переменная появления префабов, позиция Х изменяется рандомной, позиция У статичная, в зависимости от того, где установлена точка респауна
-        
+
     //    Instantiate(prefabs[randPrefabs], whereToSpawn, Quaternion.identity); //появление префабов(астероидов из массива) в заданном месте с рандомным изменением по оси Х
     //    Repeat();
     //}
 
     private void Start()
     {
-        StartCoroutine(FastMove());
+        StartCoroutine(MoveAsteroids());
+        StartCoroutine(CrazyAsteriod());
 
     }
 
-    private void Repeat()
+    private void RepeatForMoveAsteroids()
     {
-        StartCoroutine(FastMove());
+        StartCoroutine(MoveAsteroids());        
     }
-    public IEnumerator FastMove()
+
+    private void RepeatForCrazyAsteroids()
+    {
+        StartCoroutine(CrazyAsteriod());
+    }
+
+
+    public IEnumerator MoveAsteroids()
+    {
+        timeStep = 1f;
+        yield return new WaitForSeconds(timeStep);
+        int randX = Random.Range(0, respawns.Length); //рандомный перебор значений по оси Х
+        int randPrefabs = Random.Range(0, prefabs.Length); //рандомный перебор в массиве с префабами астероидов
+        whereToSpawn = new Vector2(respawns[randX], transform.position.y); //переменная появления префабов, позиция Х изменяется рандомной, позиция У статичная, в зависимости от того, где установлена точка респауна
+        Instantiate(prefabs[randPrefabs], whereToSpawn, Quaternion.identity); //появление префабов(астероидов из массива) в заданном месте с рандомным изменением по оси Х
+        RepeatForMoveAsteroids();     
+    }
+
+    public IEnumerator CrazyAsteriod()
     {
         timeStep = Random.Range(12f, 20f);
         yield return new WaitForSeconds(timeStep);
-            float randX = Random.Range(-5.3f, 5.3f); //рандомный перебор значений по оси Х
-            int randPrefabs = Random.Range(0, prefabs.Length); //рандомный перебор в массиве с префабами астероидов
-            whereToSpawn = new Vector2(randX, transform.position.y); //переменная появления префабов, позиция Х изменяется рандомной, позиция У статичная, в зависимости от того, где установлена точка респауна
-            Instantiate(prefabs[randPrefabs], whereToSpawn, Quaternion.identity); //появление префабов(астероидов из массива) в заданном месте с рандомным изменением по оси Х
-        
-        Repeat();
-                
+        int randX = Random.Range(0, respawns.Length); //рандомный перебор значений по оси Х
+        int randPrefabs = Random.Range(0, prefabs.Length); //рандомный перебор в массиве с префабами астероидов
+        whereToSpawn = new Vector2(respawns[randX], 15.3f); //переменная появления префабов, позиция Х изменяется рандомной, позиция У статичная, в зависимости от того, где установлена точка респауна
+        Instantiate(prefabs[randPrefabs], whereToSpawn, Quaternion.identity); //появление префабов(астероидов из массива) в заданном месте с рандомным изменением по оси Х
+        RepeatForCrazyAsteroids();
     }
 
 }

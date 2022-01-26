@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7861401469648689176}
   - component: {fileID: 7861401469648689177}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7861401470660448561}
   - component: {fileID: 7861401470660448573}
   - component: {fileID: 7861401470660448572}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fish
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ed9117bf656764b8cea2bbdc920981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 0.03
   posFishScore: {fileID: 5072031516297168343, guid: 1e2ebe404f1a9734690a711eaa831418, type: 3}
 --- !u!50 &7861401470660448573
 Rigidbody2D:
