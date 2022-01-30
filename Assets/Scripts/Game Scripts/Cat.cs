@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 4f;
     [SerializeField] private float speed = 8f;
     private Rigidbody2D rb;
 
@@ -12,13 +11,25 @@ public class Cat : MonoBehaviour
     [SerializeField] private float gravityForce = 5f;
     [SerializeField] public static bool gravityPlanet = true;
 
+    private Animator anim;
+    private bool isMove = true;
+
+    [SerializeField] private GameObject losePanel;
+
     public static Cat Instance { get; set; } // можем обращаться ко всем параметрам и методам класса Cat не создавая его экземпляров
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if (isMove == false)
+            Invoke("LosePanel", 0.5f);
     }
 
     private void FixedUpdate()
@@ -37,7 +48,7 @@ public class Cat : MonoBehaviour
         if (Input.GetButton("Horizontal") && gravityPlanet == true) //условия при котором срабатывал метод Move() для придания персонажу движения вбок с помощью кнопок вправо и влево 
         {
             Move();
-            
+
         }
 
         else
@@ -46,18 +57,8 @@ public class Cat : MonoBehaviour
         }
     }
 
-    private void Fly() //метод для бесконечного движения вверх
-    {
-        transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
-        rb.freezeRotation = true;
-
-    }
-
     private void Move() // метод для перемещения персонажа вправо и влево
     {
-        //Vector3 dir = transform.right * speed * Input.GetAxis("Horizontal");
-        //transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
-
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         //float moveVertical = Input.GetAxis("Vertical");
@@ -70,13 +71,38 @@ public class Cat : MonoBehaviour
             rb.transform.rotation = Quaternion.Euler(0, 0, 30f);
         if (movement.x > 0.0f) //условие для того, чтобы при движении вправо поворот героя был вправо (поворачиваем с помощию кватерниона)
             rb.transform.rotation = Quaternion.Euler(0, 0, -30f);
-        
+
+        if (isMove == true) State = States.FireIdleCat; //анимация движения героя
+
     }
 
     public void DieCat()
     {
-        Destroy(this.gameObject);
+        isMove = false; //условие для отключения анимации движения
+        State = States.Crash; //анимация взрыва при столкновении
+        Destroy(this.gameObject, 1f);
+        
+        
+    }
+
+    private void LosePanel()
+    {
+        losePanel.SetActive(true);
         Time.timeScale = 0f;
     }
+
+    public enum States
+    {
+        FireIdleCat,
+        Crash
+    }
+
+    private States State
+    {
+        get { return (States)anim.GetInteger("State"); } // c помощью get получаем значение Стэйт из аниматора
+        set { anim.SetInteger("State", (int)value); } //C помощью set меняем значение Стэйт
+
+    }
+
 
 }

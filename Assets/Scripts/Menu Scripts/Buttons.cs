@@ -10,7 +10,15 @@ public class Buttons : MonoBehaviour
     [SerializeField] public GameObject pauseButton;
     [SerializeField] public GameObject continueButton;
     [SerializeField] public GameObject pauseMenu;
+    [SerializeField] public GameObject loseMenu;
+    [SerializeField] public GameObject mainMenuButton;
+    [SerializeField] public GameObject scorePanel;
 
+
+    private void Update()
+    {
+        LoseMenu();
+    }
     public void Exit()
     {
         Debug.Log("Мы вышли из игры");
@@ -21,12 +29,13 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
+        Score.score = 0;
     }
 
     public void Pause()
     {
-        Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void ContinueGame()
@@ -34,5 +43,25 @@ public class Buttons : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    public void LoseMenu()
+    {
+        if (!FindObjectOfType<Cat>())
+        {
+            loseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            Score.score = 0;
+            scorePanel.SetActive(false);
+            
+        }
+        
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1f;
+    }
+
 
 }
