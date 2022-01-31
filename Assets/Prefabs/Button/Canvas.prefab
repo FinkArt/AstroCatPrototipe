@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorePanel: {fileID: 1749760816890604932}
   scoreFishPanel: {fileID: 1749760817368590120}
+  highScorePanel: {fileID: 1749760816951107294}
+  scoreOfRoundPanel: {fileID: 1749760816342999172}
 --- !u!1 &1749760816140720382
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +388,7 @@ GameObject:
   - component: {fileID: 1749760816342999169}
   - component: {fileID: 1749760816342999174}
   m_Layer: 5
-  m_Name: Your Score
+  m_Name: Score of round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +621,7 @@ GameObject:
   - component: {fileID: 1749760816951107291}
   - component: {fileID: 1749760816951107288}
   m_Layer: 5
-  m_Name: Best Score
+  m_Name: High Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u043B\u0443\u0447\u0448\u0438\u0439 \u0441\u0447\u0451\u0442:"
+  m_Text: 
 --- !u!1 &1749760817368590120
 GameObject:
   m_ObjectHideFlags: 0

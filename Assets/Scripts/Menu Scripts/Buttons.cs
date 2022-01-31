@@ -15,9 +15,10 @@ public class Buttons : MonoBehaviour
     [SerializeField] public GameObject scorePanel;
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         LoseMenu();
+                
     }
     public void Exit()
     {
@@ -30,6 +31,7 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
         Score.score = 0;
+        Score.scoreFish = 0;
     }
 
     public void Pause()
@@ -49,10 +51,8 @@ public class Buttons : MonoBehaviour
         if (!FindObjectOfType<Cat>())
         {
             loseMenu.SetActive(true);
-            Time.timeScale = 0f;
-            Score.score = 0;
             scorePanel.SetActive(false);
-            
+            Time.timeScale = 0f;
         }
         
     }

@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public static int score = 0;
-    [SerializeField] public GameObject scorePanel;
+    [SerializeField] private GameObject scorePanel;
     public static int scoreFish = 0;
-    [SerializeField] public GameObject scoreFishPanel;
+    [SerializeField] private GameObject scoreFishPanel;
+    public static int highScore = 0;
+    [SerializeField] private GameObject highScorePanel;
+    public static int scoreOfRound = 0;
+    [SerializeField] private GameObject scoreOfRoundPanel; 
+   
 
     private void Start()
     {
@@ -33,7 +38,14 @@ public class Score : MonoBehaviour
     private void Update()
     {
         scoreFishPanel.GetComponent<Text>().text = scoreFish.ToString();
+        if (highScore < score)
+            highScore = score; //сравниваем переменную наивысшего счета с текущим, если меньше текущего, то выводим новый лучший счет
+        Text highSc = highScorePanel.GetComponent<Text>(); //получаем доступ к тексту лучшего счета
+        highSc.text = "Ћучший счЄт: " + highScore; // записываем данные в текст
         
+        Text sc = scoreOfRoundPanel.GetComponent<Text>();
+        sc.text = "—чЄт этого раунда: " + score;
+
     }
 
 }
