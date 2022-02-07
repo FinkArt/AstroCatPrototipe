@@ -12,7 +12,7 @@ public class MoveEnemies : Entity
         {
             speed = 0.5f;
         }
-
+        
     }
 
     private void Update()
@@ -25,7 +25,7 @@ public class MoveEnemies : Entity
     private void FixedUpdate()
     {
         Move();
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
