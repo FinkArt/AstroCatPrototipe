@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1949098973960705470}
   - component: {fileID: -1762957394860958090}
   - component: {fileID: -1793030829431155642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Meteor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad1e003f4b178446970ddce4c3b0126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  rotation: 1
 --- !u!1 &7807082064162802159
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8175698121090805226}
   - component: {fileID: 8402189687327706188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

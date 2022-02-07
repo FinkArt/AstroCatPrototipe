@@ -7,7 +7,7 @@ public class Fish : Entity
     [SerializeField] private Transform posFishScore; //пременная с типом данных Transform для перемещения объекта Fish после ловли игроком в точку со счетом с иконкой рыбки
     private bool move = true;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (move == true)
             Move();

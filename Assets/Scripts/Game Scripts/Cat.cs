@@ -26,45 +26,36 @@ public class Cat : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        if (isMove == false)
-            Invoke("LosePanel", 0.5f);
-    }
-
     private void FixedUpdate()
     {
         if (gravityPlanet == false) //условие при котором планета будет притягивать персонажа к своему центру
         {
             rb.AddForce((planetPosition.position - transform.position).normalized * gravityForce);
         }
+
+        else if (transform.position.x < -5.5)
+            transform.position = new Vector2(5.49f, transform.position.y);
+        else if (transform.position.x > 5.5)
+            transform.position = new Vector2(-5.49f, transform.position.y);
+
     }
 
     private void Update()
     {
-        //if (gravityPlanet == true) //условия при котором срабатывал метод Fly() для придания персонажу бесконечного движения вверх
-        //    Fly();
-
-        if (Input.GetButton("Horizontal") && gravityPlanet == true) //условия при котором срабатывал метод Move() для придания персонажу движения вбок с помощью кнопок вправо и влево 
+        if (Input.GetButton("Horizontal") && gravityPlanet == true && isMove == true) //условия при котором срабатывал метод Move() для придания персонажу движения вбок с помощью кнопок вправо и влево 
         {
             Move();
 
         }
 
         else
-        {
-            rb.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+            transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void Move() // метод для перемещения персонажа вправо и влево
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-
-        //float moveVertical = Input.GetAxis("Vertical");
-
         Vector3 movement = new Vector3(moveHorizontal, 0.0f);
-
         transform.position = Vector3.MoveTowards(transform.position, transform.position + movement, speed * Time.deltaTime);
 
         if (movement.x < 0.0f) //условие для того, чтобы при движении влево поворот героя был влево (поворачиваем с помощию кватерниона)
@@ -85,12 +76,6 @@ public class Cat : MonoBehaviour
         
     }
 
-    private void LosePanel()
-    {
-        losePanel.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
     public enum States
     {
         FireIdleCat,
@@ -103,6 +88,5 @@ public class Cat : MonoBehaviour
         set { anim.SetInteger("State", (int)value); } //C помощью set меняем значение Стэйт
 
     }
-
 
 }
